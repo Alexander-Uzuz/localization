@@ -5,7 +5,8 @@
 
     <section>
         <div class="container">
-            <h1 class="h3">@yield('admin.title')</h1>
+            @include('admin.includes.title')
+            @include('admin.includes.errors')
 
             @yield('admin.content')
         </div>
