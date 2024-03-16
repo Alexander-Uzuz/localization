@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use PHPUnit\TestRunner\TestResult\Collector;
 
 /** 
  * @property string $id
@@ -63,6 +65,21 @@ class Language extends Model
         return self::query()
             ->where('active', true)
             ->where('fallback', true)
+            ->first();
+    }
+
+    public static function getActive(): Collection
+    {
+        return self::query()
+            ->where('active', true)
+            ->get();
+    }
+
+    public static function findActive(string $id): self|null
+    {
+        return self::query()
+            ->where('active', true)
+            ->where('id', $id)
             ->first();
     }
 }
