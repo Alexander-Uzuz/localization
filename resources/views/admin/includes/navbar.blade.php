@@ -21,6 +21,10 @@
                     </a>
                 </li>
             </ul>
+
+            <ul class="navbar-nav">
+                @include('includes.languages')
+            </ul>
         </div>
     </div>
 </nav>
