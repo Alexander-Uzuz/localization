@@ -18,7 +18,7 @@ class LanguageRouteMiddleware
     {
         $this->prefix = Language::routePrefix();
         $this->currentLanguage = app()->getLocale();
-        $this->defaultLanguage = Language::findDefault() ? Language::findDefault()->id : config('app.fallback_locale');
+        $this->defaultLanguage = Language::findDefault()->id;
     }
 
     public function handle(Request $request, Closure $next): Response
