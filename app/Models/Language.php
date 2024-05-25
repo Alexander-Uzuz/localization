@@ -72,15 +72,10 @@ class Language extends Model
 
     public static function getActive(): Collection
     {
-        return Cache::remember(
-            key: 'languages',
-            ttl: now()->addDay(),
-            callback: function () {
-                self::query()
-                    ->where('active', true)
-                    ->get();
-            }
-        );
+        return
+            self::query()
+            ->where('active', true)
+            ->get();
     }
 
     public static function findActive(string $id): self|null
