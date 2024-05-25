@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
-@section('main.title', 'Главная')
+@section('main.title', trans('home.title'))
 
 @section('main.content')
-    Текущий язык: {{ app()->getLocale() }}
+    {{ trans('home.content') }} {{ app()->getLocale() }}
 @endsection
